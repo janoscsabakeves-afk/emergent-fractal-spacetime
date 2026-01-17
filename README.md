@@ -12,4 +12,4 @@ Install dependencies: pip install -r requirements.txt (if added; otherwise manua
 Run the notebook sequentially in Jupyter.
 
 For full accuracy, use n_boot=5000 and complete datasets. Contact: janoscsabakeves@gmail.com or @JanosKeves68
- on X.(Note: If this mixes with your other paper on black hole cosmology, feel free to adjust!)
+ on X.
