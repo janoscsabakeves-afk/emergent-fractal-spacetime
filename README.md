@@ -1,4 +1,5 @@
-# emergent-fractal-spacetime
+# Emergent-Fractal-Geometri
+
 This repository contains a reproducible Jupyter notebook for calculating 3D fractal dimensions in cosmic structures, as described in the paper:"Emergent Fractal Geometry of Spacetime from
 Interstellar Clouds to the Cosmic Web: A Dark-Component-Free Cosmological Model"
 by János Kevés – January 17, 2026
