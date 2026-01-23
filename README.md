@@ -25,4 +25,9 @@ Install dependencies: pip install -r requirements.txt (if added; otherwise manua
 Run the notebook:
 Open and run the cells sequentially in Jupyter. For maximum accuracy, ensure n_boot=5000 is set and use the complete datasets.
 
+## Quick Start
+- Install deps: `pip install -r requirements.txt`
+- Run notebook: Open in Jupyter or Colab.
+- Demo runtime: ~5 min (n_boot=2000); for faster, set n_boot=100 in code.
+
 Contact: janoscsabakeves@gmail.com or @JanosKeves68 on X.
