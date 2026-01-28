@@ -1,5 +1,16 @@
-numpy
-matplotlib
-pandas
-astropy
-scipy
+# Core scientific computing
+numpy>=1.23.0
+scipy>=1.10.0
+
+# Data handling
+pandas>=2.0.0
+
+# Astronomy essentials
+astropy>=6.0.0  # SkyCoord, cosmology, units, coordinates
+
+# Plotting
+matplotlib>=3.7.0
+
+# Optional but useful for notebook (not strictly required)
+jupyter>=1.0.0          # if you run it locally in Jupyter
+ipython>=8.0.0          # interactive shell
