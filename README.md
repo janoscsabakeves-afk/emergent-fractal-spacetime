@@ -1,23 +1,29 @@
-# Emergent-Fractal-Geometri
+# Emergent Fractal Geometry of Spacetime  
+A Dark-Component-Free Cosmological Model
 
-This repository contains a reproducible Jupyter notebook for calculating 3D fractal dimensions in cosmic structures, as described in the paper:"Emergent Fractal Geometry of Spacetime from
-Interstellar Clouds to the Cosmic Web: A Dark-Component-Free Cosmological Model"
-by János Kevés – January 17, 2026
+**Author**: János Csaba Kevés  
 
-Key Features
+The work demonstrates low fractal dimensions (1.25 ≤ D₃D ≤ 1.82) in biased, perturbed baryonic structures across 16 orders of magnitude in scale — from ISM clouds to z ≳ 10 cosmic filaments — using uniform 3D box-counting on public JWST/HST/Gaia/DESI datasets. These findings challenge ΛCDM expectations in extreme environments and propose an emergent, matter-dependent spacetime geometry as an alternative to dark components.
 
-Notebook: supplementary_calculations.ipynb – Fully reproduces key calculations using real public data (M31 satellites, Cosmic Vine, z>10 galaxies).
+### Key Features
+- Jupyter notebook reproducing main D₃D measurements (box-counting + bootstrap)
+- Processed point clouds (small CSV files) for offline reproducibility
+- Fallback hardcoded representative subsamples when full data not public
+- Dependencies: NumPy, SciPy, Pandas, Astropy, Matplotlib
 
-Methods: 3D box-counting with bootstrap resampling, deprojection correction.
+### Repository Structure
+- `supplementary_calculations.ipynb` — Main analysis notebook (box-counting, deprojection, bootstrap)
+- `data/processed/` — Processed Cartesian point clouds (M31, Cosmic Vine subsample, z>10 subsample, z>5 subsample)
+- `emergent-fractal-spacetime.pdf` — Full paper
+- `data_links.md` — External catalog links (JWST archives, arXiv, etc.)
+- `requirements.txt` — Python dependencies
+- `README_processed.md` (in data/processed/) — Detailed data file descriptions
 
-Requirements: Python 3.x with NumPy, SciPy, Pandas, Astropy, Matplotlib.
-
-Data: Hardcoded samples; full catalogs via links in notebook.
-
-Runtime: Bootstrap may take 5-60 minutes depending on hardware.
-
-Usage
-
+### Installation & Quick Start
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
+   cd emergent-fractal-spacetime
 Clone the repository: https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
 
 Install dependencies: pip install -r requirements.txt (if added; otherwise manual).
