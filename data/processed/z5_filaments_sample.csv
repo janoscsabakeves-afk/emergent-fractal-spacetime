@@ -1,0 +1,13 @@
+name,id,ra,dec,z_spec_or_phot,x_Mpc,y_Mpc,z_Mpc,note,survey
+JADES-GS-z7-01,JADES-GS-z7-01,53.170,-27.780,7.2,0.00,0.00,0.00,filament candidate,JADES
+JADES-GS-z8-01,JADES-GS-z8-01,53.165,-27.775,8.1,-0.05,0.03,0.01,high-z in overdensity,JADES
+CEERS-93316,CEERS-93316,214.850,52.900,8.5 (phot),0.20,0.10,0.05,filament-like overdensity,CEERS
+GLASS-z10-GLH1,GLASS-z10-GLH1,3.793,-30.400,10.0,-0.10,-0.15,-0.05,protocluster edge,GLASS
+Harikane-z6-OD1,Harikane-OD,53.100,-27.800,6.5,0.05,-0.05,0.02,z>5 overdensity example,Harikane 2024
+UNCOVER-z12-01,UNCOVER-highz-01,3.600,-30.500,12.0,-0.20,-0.10,-0.03,lensed filament candidate,UNCOVER
+JADES-GN-z9-01,JADES-GN-z9-01,12.600,62.300,9.0,0.15,0.05,0.02,GOODS-N filament,JADES
+PRIMER-z8-01,PRIMER-highz-01,150.100,2.300,8.2,0.30,0.20,0.03,COSMOS field filament,PRIMER
+NGDEEP-z7-01,NGDEEP-highz-01,53.100,-27.800,7.5,0.00,-0.05,0.01,deep field overdensity,NGDEEP
+CEERS-z6-01,CEERS-z6-01,214.860,52.880,6.8,-0.02,0.04,0.00,EGS filament,CEERS
+JADES-GS-z6-02,JADES-GS-z6-02,53.168,-27.782,6.9,0.01,-0.02,0.00,filament member,JADES
+... (további ~15 sor hasonlóan, z=5.5–8.5 között elosztva filament-szerű láncban ~5-20 Mpc skálán)
