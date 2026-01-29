@@ -3,7 +3,7 @@ A Dark-Component-Free Cosmological Model
 
 **Author**: János Csaba Kevés  
 
-The work demonstrates low fractal dimensions (1.25 ≤ D₃D ≤ 1.82) in biased, perturbed baryonic structures across 16 orders of magnitude in scale — from ISM clouds to z ≳ 10 cosmic filaments — using uniform 3D box-counting on public JWST/HST/Gaia/DESI datasets. These findings challenge ΛCDM expectations in extreme environments and propose an emergent, matter-dependent spacetime geometry as an alternative to dark components.
+The work demonstrates low fractal dimensions (1.25 ≤ D₃D ≤ 1.82) in biased, perturbed baryonic structures across 19 orders of magnitude in scale — from ISM clouds to z ≳ 10 cosmic filaments — using uniform 3D box-counting on public JWST/HST/Gaia/DESI datasets. These findings challenge ΛCDM expectations in extreme environments and propose an emergent, matter-dependent spacetime geometry as an alternative to dark components.
 
 ### Key Features
 - Jupyter notebook reproducing main D₃D measurements (box-counting + bootstrap)
