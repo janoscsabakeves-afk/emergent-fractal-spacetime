@@ -1,39 +1,60 @@
-# Emergent Fractal Geometry of Spacetime  
-A Dark-Component-Free Cosmological Model
+# Emergent Fractal Spacetime  
+**A Dark-Component-Free Cosmological Model Based on Emergent Fractal Geometry**
 
-**Author**: János Csaba Kevés  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!--Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)-->
 
-The work demonstrates low fractal dimensions (1.25 ≤ D₃D ≤ 1.82) in biased, perturbed baryonic structures across 19 orders of magnitude in scale — from ISM clouds to z ≳ 10 cosmic filaments — using uniform 3D box-counting on public JWST/HST/Gaia/DESI datasets. These findings challenge ΛCDM expectations in extreme environments and propose an emergent, matter-dependent spacetime geometry as an alternative to dark components.
+János Csaba Kevés  
+Independent Researcher  
+Budapest, Hungary  
+janoscsabakeves@gmail.com  
+January 2026
 
-### Key Features
-- Jupyter notebook reproducing main D₃D measurements (box-counting + bootstrap)
-- Processed point clouds (small CSV files) for offline reproducibility
-- Fallback hardcoded representative subsamples when full data not public
-- Dependencies: NumPy, SciPy, Pandas, Astropy, Matplotlib
+[📄 Full paper (PDF)](./emergent-fractal-spacetime.pdf)
 
-### Repository Structure
-- `supplementary_calculations.ipynb` — Main analysis notebook (box-counting, deprojection, bootstrap)
-- `data/processed/` — Processed Cartesian point clouds (M31, Cosmic Vine subsample, z>10 subsample, z>5 subsample)
-- `emergent-fractal-spacetime.pdf` — Full paper
-- `data_links.md` — External catalog links (JWST archives, arXiv, etc.)
-- `requirements.txt` — Python dependencies
-- `README_processed.md` (in data/processed/) — Detailed data file descriptions
+### Overview
 
-### Installation & Quick Start
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
-   cd emergent-fractal-spacetime
-Clone the repository: https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
+This repository contains the supplementary code and processed datasets to reproduce the key results of the paper:
 
-Install dependencies: pip install -r requirements.txt (if added; otherwise manual).
+**Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web: A Dark-Component-Free Cosmological Model**
 
-Run the notebook:
-Open and run the cells sequentially in Jupyter. For maximum accuracy, ensure n_boot=5000 is set and use the complete datasets.
+Persistently low 3D fractal dimensions (1.25 ≤ D₃D ≤ 1.82) are measured across 16 orders of magnitude in scale using uniform box-counting on public JWST/HST/Gaia/DESI-derived point clouds — in strong tension with ΛCDM predictions for virialized structures.
 
-## Quick Start
-- Install deps: `pip install -r requirements.txt`
-- Run notebook: Open in Jupyter or Colab.
-- Demo runtime: ~5 min (n_boot=2000); for faster, set n_boot=100 in code.
+The results motivate an alternative where spacetime curvature emerges solely from baryonic matter perturbations, rendering dark matter and dark energy unnecessary.
 
-Contact: janoscsabakeves@gmail.com or @JanosKeves68 on X.
+### What's Included
+
+- Main Jupyter notebook: [`supplementary_calculations.ipynb`](supplementary_calculations.ipynb)  
+  → box-counting, deprojection correction, bootstrap errors, scaling regime detection, plots
+- Processed point clouds (Cartesian subsamples): [`data/processed/`](data/processed/)  
+  → small CSV files for fast reproduction  
+  → fallback to hardcoded representative arrays if files missing (Colab/offline friendly)
+- Catalog links & filtering notes: [`data_links.md`](data_links.md)
+- Dependencies: [`requirements.txt`](requirements.txt)
+
+**Representative subsamples** (due to non-public filtered full lists):
+- M31 MW-facing sector satellites
+- Cosmic Vine members (Jin+2024 core subsample)
+- z > 10 confirmed galaxies
+- z > 5 filament candidates
+
+Full filtered catalogs not redistributed (size, privacy, and source archive limitations) — see `data_links.md` for sources and query instructions.
+
+### Quick Start
+
+```bash
+# Clone
+git clone https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
+cd emergent-fractal-spacetime
+
+# Virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate          # Linux/macOS
+# venv\Scripts\activate           # Windows
+
+# Install
+pip install -r requirements.txt
+
+# Run
+jupyter notebook supplementary_calculations.ipynb
+# or upload to Google Colab
