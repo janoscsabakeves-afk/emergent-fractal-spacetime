@@ -1,14 +1,14 @@
 # Processed Data Files for Reproducibility
 
-This folder contains the processed point clouds (Cartesian coordinates) used for the main 3D fractal dimension (D₃D) measurements reported in Table 2 of the paper:
+This folder contains processed point clouds (Cartesian comoving coordinates in Mpc) used for the main 3D fractal dimension (D₃D) measurements reported in Table 2 of the paper:
 
 > Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web:  
 > A Dark-Component-Free Cosmological Model  
-> János Csaba Kevés (January 27, 2026)
+> János Csaba Kevés (February 1, 2026)
 
-All files are in CSV format with minimal columns for direct use in the `supplementary_calculations.ipynb` notebook (e.g., `ra`, `dec`, `dist_kpc` or `z`, `x_kpc`/`x_Mpc`, `y_kpc`/`y_Mpc`, `z_kpc`/`z_Mpc`).
+All files are in CSV format with minimal columns for direct use in the `supplementary_calculations.ipynb` notebook (e.g., `ra`, `dec`, `z_spec_or_phot`, `x_Mpc`, `y_Mpc`, `z_Mpc`, and optional metadata like `name`, `id`, `note`, `survey`).
 
-These files enable offline, one-click reproducibility of the key results without needing to download full external catalogs. Coordinates are in comoving frame (Planck 2018 cosmology via Astropy) and centered on the structure barycenter (or approximate field center).
+These files enable fast, offline, one-click reproducibility of key high-redshift results without downloading full external JWST catalogs. Coordinates are in comoving frame (Planck 2018 cosmology via Astropy.cosmology) and approximately centered on the field center (A2744 for UNCOVER). For full catalogs and raw data sources, see `data_links.md`.
 
 ### File Descriptions
 
@@ -20,37 +20,60 @@ These files enable offline, one-click reproducibility of the key results without
   **Size**: ~30 rows.
 
 - **cosmic_vine_members.csv**  
-  **Description**: Subsample of 20 spectroscopically confirmed members (the core/most massive objects).  
-  **Source**: Jin et al. (2024, A&A 683, L4 / Table 1); full 136 members from Sillassen et al. (2025, arXiv:2510.23549) not publicly available (DAWN JWST Archive internal).  
-  **Columns**: id, name, ra (deg), dec (deg), z_spec, logMstar, SFR, x_Mpc, y_Mpc, z_Mpc (comoving, relative to approximate vine barycenter ~RA 214.9°, Dec 52.87°), note.  
+  **Description**: Representative subsample of 20 spectroscopically confirmed members (core/most massive objects).  
+  **Source**: Jin et al. (2024, A&A 683, L12 / Table 1); full 136 members from Sillassen et al. (2025, arXiv:2510.23549) not fully public.  
+  **Columns**: id, name, ra (deg), dec (deg), z_spec, logMstar, SFR, x_Mpc, y_Mpc, z_Mpc (comoving, relative to vine barycenter), note.  
   **Relevance**: z ≈ 3.44 filament; D₃D = 1.63 ± 0.03 (3σ tension).  
   **Note**: Use as representative subsample; full list not open access.
 
 - **z10_confirmed.csv**  
   **Description**: Representative subsample of ~12 spectroscopically/photometrically confirmed z > 10 galaxies (from public JWST papers).  
-  **Source**: Aggregated from JADES (e.g., JADES-GS-z14-0), GLASS (GHZ1/z10), CEERS, UNCOVER, etc. (2024–2025 publications); full 28 confirmed objects from Pérez-González et al. (2025) not publicly listed.  
+  **Source**: Aggregated from JADES, GLASS, CEERS, UNCOVER, etc. (2024–2025 publications); full 28 confirmed objects from Pérez-González et al. (2025) not publicly listed.  
   **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving, relative to GOODS-S center), note, survey.  
   **Relevance**: z > 10 confirmed; D₃D = 1.47 ± 0.06 (4–5σ tension). Photometric uncertainties addressed via deprojection.  
   **Note**: Exploratory subsample; full list pending publication.
 
 - **z5_filaments_sample.csv**  
   **Description**: Representative subsample of ~25 z > 5 galaxies from filament/protocluster environments.  
-  **Source**: Aggregated from JADES, CEERS, GLASS, UNCOVER, NGDEEP, PRIMER public high-z catalogs (Harikane et al. 2024 and related works); full ~427 galaxies not publicly available as a filtered filament list.  
+  **Source**: Aggregated from JADES, CEERS, GLASS, UNCOVER, NGDEEP, PRIMER public high-z catalogs (Harikane et al. 2024 and related works); full ~427 galaxies not publicly available as filtered filament list.  
   **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving, relative to approximate GOODS-S/EGS center), note, survey.  
   **Relevance**: z > 5 filaments; D₃D = 1.59 ± 0.04 (3–4σ tension).  
   **Note**: Representative for method demonstration; full merged dataset from JWST DRs.
 
+- **UNCOVER_z5_z10.csv** (NEW)  
+  **Description**: Filtered subset of ~5167 galaxies with photometric/spectroscopic redshifts in 5 ≤ z ≤ 10 from the UNCOVER survey (Abell 2744 lensed field).  
+  **Source**: Own filtering of the public UNCOVER master catalog (Weaver et al. 2024; latest DR3/DR4 versions via https://jwst-uncover.github.io/). Quality cuts applied (S/N > 5, photo-z flags, etc.).  
+  **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving), note, survey.  
+  **Relevance**: Mid-to-high redshift extension; probes filamentary structures in lensed field at cosmic noon to early universe transition. Can be used to test D₃D evolution in biased environments (expected ~1.5–1.6 range based on similar z>5 samples).  
+  **Size**: ~772 kB (~5167 rows).  
+  **Note**: Lensed field → magnification effects possible; consider weighting by mu if available in raw catalog.
+
+- **UNCOVER_z10_z16.csv** (NEW)  
+  **Description**: Filtered subset of ~826 galaxies with photometric/spectroscopic redshifts z ≥ 10 (mostly candidates + confirmed) from the UNCOVER survey.  
+  **Source**: Own filtering of public UNCOVER master catalog (latest DR versions). Quality cuts applied.  
+  **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving), note, survey.  
+  **Relevance**: High-redshift extension (z ≳ 10–16); directly relevant for probing early cosmic web filaments and D₃D ≈ 1.47–1.59 trend toward cosmic dawn. Complements the smaller z>10 confirmed subsample.  
+  **Size**: ~122 kB (~826 rows).  
+  **Note**: High photo-z uncertainty at z>12; deprojection correction recommended for box-counting.
+
 ### Usage in Notebook
-In `supplementary_calculations.ipynb`, files are loaded with fallback to hardcoded representative data:
+
+In `supplementary_calculations.ipynb`, files are loaded with fallback to hardcoded representative data if missing (for Colab/offline compatibility). Example for new UNCOVER files (adapt existing loading pattern):
 
 ```python
 import pandas as pd
 from pathlib import Path
 
-DATA_DIR = Path('data/processed')
+DATA_DIR = Path('../data/processed')
 
+# Example: load with optional subsample for quick tests
 try:
-    df = pd.read_csv(DATA_DIR / 'm31_mw_facing_sector.csv')  # example
+    df_uncov_high = pd.read_csv(DATA_DIR / 'UNCOVER_z10_z16.csv')
+    # Optional: quick subsample for demo / low-RAM runs
+    # df_uncov_high = df_uncov_high.sample(n=100, random_state=42)
 except FileNotFoundError:
-    print("CSV not found — using fallback hardcoded subsample")
-    # hardcoded data here
+    print("UNCOVER file not found — using fallback hardcoded high-z sample")
+    # hardcoded representative array here (as in existing code)
+
+coords = df_uncov_high[['x_Mpc', 'y_Mpc', 'z_Mpc']].to_numpy()
+# Proceed with box-counting, deprojection, bootstrap, etc.
