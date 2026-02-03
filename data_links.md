@@ -13,7 +13,7 @@ The primary source for the early cosmic web analysis (z = 5–16).
 - **Project Page:** [jwst-uncover.github.io](https://jwst-uncover.github.io/)
 - **Core Catalog:** Weaver et al. (2024), *ApJS*, 270, 7 ([DOI: 10.3847/1538-4365/ad07e0](https://iopscience.iop.org/article/10.3847/1538-4365/ad07e0)).
 - **SPS & Photo-z:** Wang et al. (2024), *ApJS*, 270, 12. Full catalog available via [Zenodo (doi:10.5281/zenodo.8401181)](https://zenodo.org).
-- **Spectroscopic Redshifts:** DR4.1 update (Dec 2024) via [UNCOVER Project Page](https://jwst-uncover.github.io).
+- **Spectroscopic Redshifts:** DR4.1 update (Dec 2024) via [UNCOVER Project Page]([https://jwst-uncover.github.io](https://jwst-uncover.github.io/DR4.html)).
 - **Processed Subsets in this Repo:** 
   - `UNCOVER_z5_z10.csv`: 5,217 galaxies (5 ≤ z ≤ 10). 
   - `UNCOVER_z10_z16.csv`: 953 galaxies (z ≥ 10), including the record-breaking $z=13.16$ source (ID 13077).
