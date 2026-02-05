@@ -1,54 +1,56 @@
 # Processed Data Files for Reproducibility
 
-This folder contains processed point clouds (Cartesian comoving coordinates in Mpc) used for the main 3D fractal dimension ($D_{3D}$) measurements reported in Table 2 of the paper:
+This folder contains the processed point clouds (Cartesian coordinates) used for the main 3D fractal dimension (D₃D) measurements reported in Table 2 of the paper:
 
-> **Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web:**  
-> **A Dark-Component-Free Cosmological Model**  
-> *János Csaba Kevés (February 1, 2026)*
+> Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web:  
+> A Dark-Component-Free Cosmological Model  
+> János Csaba Kevés (January 27, 2026)
 
-All files are in CSV format, optimized for the `supplementary_calculations.ipynb` notebook. Coordinates are calculated in the comoving frame using **Planck 2018 cosmology** (via `astropy.cosmology`).
+All files are in CSV format with minimal columns for direct use in the `supplementary_calculations.ipynb` notebook (e.g., `ra`, `dec`, `dist_kpc` or `z`, `x_kpc`/`x_Mpc`, `y_kpc`/`y_Mpc`, `z_kpc`/`z_Mpc`).
 
-### Key Statistical Updates (as of Feb 3, 2026)
-Following the integration of the full **JWST UNCOVER DR3/DR4** spectroscopic and photometric catalogs, the samples have been expanded to provide higher statistical significance for fractal analysis.
-
----
+These files enable offline, one-click reproducibility of the key results without needing to download full external catalogs. Coordinates are in comoving frame (Planck 2018 cosmology via Astropy) and centered on the structure barycenter (or approximate field center).
 
 ### File Descriptions
 
-#### 1. `m31_mw_facing_sector.csv`
-- **Description**: 30 satellite galaxies from the M31 system, filtered to the Milky Way-facing sector ($\theta \leq 90^\circ$).
-- **Source**: Updated from [Savino et al. (2025)](https://arxiv.org).
-- **Relevance**: Represents a local system with a measured $D_{3D} = 1.25 \pm 0.04$, showing significant tension ($3–4\sigma$) against $\Lambda$CDM predictions.
+- **m31_mw_facing_sector.csv**  
+  **Description**: 30 satellites from the MW-facing sector (θ ≤ 90° from M31–MW line-of-sight) of the M31 system.  
+  **Source**: Savino et al. (2025) updated Table 1 (full sample 41 objects; filtered to 30 in sector).  
+  **Columns**: name, ra (deg), dec (deg), dist_kpc, theta_deg, x_kpc, y_kpc, z_kpc (Cartesian relative to M31 center).  
+  **Relevance**: Key system with lowest D₃D = 1.25 ± 0.04 (3–4σ tension vs ΛCDM).  
+  **Size**: ~30 rows.
 
-#### 2. `cosmic_vine_members.csv`
-- **Description**: Confirmed members of the **Cosmic Vine** filament in the CEERS field ($z \approx 3.44$).
-- **Source**: [Goulding et al. (2023)](https://www.nature.com).
-- **Relevance**: A prime example of a $z \approx 3.4$ filamentary structure; contributes to the observed $D_{3D} = 1.63$ trend.
+- **cosmic_vine_members.csv**  
+  **Description**: Subsample of 20 spectroscopically confirmed members (the core/most massive objects).  
+  **Source**: Jin et al. (2024, A&A 683, L4 / Table 1); full 136 members from Sillassen et al. (2025, arXiv:2510.23549) not publicly available (DAWN JWST Archive internal).  
+  **Columns**: id, name, ra (deg), dec (deg), z_spec, logMstar, SFR, x_Mpc, y_Mpc, z_Mpc (comoving, relative to approximate vine barycenter ~RA 214.9°, Dec 52.87°), note.  
+  **Relevance**: z ≈ 3.44 filament; D₃D = 1.63 ± 0.03 (3σ tension).  
+  **Note**: Use as representative subsample; full list not open access.
 
-#### 3. `UNCOVER_z5_z10.csv` (Slim version)
-- **Description**: Expanded subset of **5,217 galaxies** ($5 \leq z \leq 10$) from the UNCOVER survey (Abell 2744 field).
-- **Source**: Integrated master catalog (SUPER cat + SPS DR4). Processed to resolve the "pencil-beam" geometry bias.
-- **Relevance**: High-resolution probe of the early cosmic web. Measured small-scale $D_{3D} \approx 1.60$, confirming the hierarchical clustering model during the Reionization era.
-- **Note**: "Slim" version used for GitHub compatibility (rounded to 4 decimal places).
+- **z10_confirmed.csv**  
+  **Description**: Representative subsample of ~12 spectroscopically/photometrically confirmed z > 10 galaxies (from public JWST papers).  
+  **Source**: Aggregated from JADES (e.g., JADES-GS-z14-0), GLASS (GHZ1/z10), CEERS, UNCOVER, etc. (2024–2025 publications); full 28 confirmed objects from Pérez-González et al. (2025) not publicly listed.  
+  **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving, relative to GOODS-S center), note, survey.  
+  **Relevance**: z > 10 confirmed; D₃D = 1.47 ± 0.06 (4–5σ tension). Photometric uncertainties addressed via deprojection.  
+  **Note**: Exploratory subsample; full list pending publication.
 
-#### 4. `UNCOVER_z10_z16.csv`
-- **Description**: Extreme high-redshift sample containing **953 galaxies** ($z \geq 10$) from the UNCOVER survey.
-- **Source**: Combined UNCOVER DR4 spectroscopic and photometric (SPS) catalogs.
-- **Relevance**: One of the largest available samples of Cosmic Dawn candidates. Essential for testing $D_{3D}$ evolution toward the theoretical $1.47–1.59$ limit at high redshift.
-- **Note**: Includes the record-breaking $z = 13.16$ (ID: 13077) and $z = 12.19$ (ID: 38766) objects.
-
----
+- **z5_filaments_sample.csv**  
+  **Description**: Representative subsample of ~25 z > 5 galaxies from filament/protocluster environments.  
+  **Source**: Aggregated from JADES, CEERS, GLASS, UNCOVER, NGDEEP, PRIMER public high-z catalogs (Harikane et al. 2024 and related works); full ~427 galaxies not publicly available as a filtered filament list.  
+  **Columns**: name, id, ra (deg), dec (deg), z_spec_or_phot, x_Mpc, y_Mpc, z_Mpc (comoving, relative to approximate GOODS-S/EGS center), note, survey.  
+  **Relevance**: z > 5 filaments; D₃D = 1.59 ± 0.04 (3–4σ tension).  
+  **Note**: Representative for method demonstration; full merged dataset from JWST DRs.
 
 ### Usage in Notebook
-
-Files are loaded via `pandas`. The `slim` versions are recommended for web-based environments (like GitHub/Colab) to ensure fast loading and searchability.
+In `supplementary_calculations.ipynb`, files are loaded with fallback to hardcoded representative data:
 
 ```python
 import pandas as pd
 from pathlib import Path
 
-# Load the high-redshift sample (N=953)
-df_high_z = pd.read_csv('UNCOVER_z10_z16.csv')
+DATA_DIR = Path('data/processed')
 
-# Accessing Cartesian coordinates for fractal dimension calculation
-coords = df_high_z[['x_Mpc', 'y_Mpc', 'z_Mpc']].to_numpy()
+try:
+    df = pd.read_csv(DATA_DIR / 'm31_mw_facing_sector.csv')  # example
+except FileNotFoundError:
+    print("CSV not found — using fallback hardcoded subsample")
+    # hardcoded data here
