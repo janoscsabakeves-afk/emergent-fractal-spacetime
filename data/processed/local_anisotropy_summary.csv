@@ -1,0 +1,5 @@
+Dataset,Sky_Sector,D3D_Correlation,Anisotropy_Delta,Status
+DESI LRG (z~0.6),North (NGC),1.8848,0.1107,Validated
+DESI LRG (z~0.6),South (SGC),1.7741,0.1107,Validated
+DESI BGS (z<0.2),North (NGC),2.2503,0.0703,Validated
+DESI BGS (z<0.2),South (SGC),2.18,0.0703,Validated
