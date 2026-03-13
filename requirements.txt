@@ -2,8 +2,9 @@
 numpy>=1.23.0
 scipy>=1.10.0
 
-# Data handling
+# Data handling & Machine Learning
 pandas>=2.0.0
+scikit-learn>=1.2.0  # Required for PCA (Principal Component Analysis)
 
 # Astronomy essentials
 astropy>=6.0.0  # SkyCoord, cosmology, units, coordinates
@@ -11,6 +12,6 @@ astropy>=6.0.0  # SkyCoord, cosmology, units, coordinates
 # Plotting
 matplotlib>=3.7.0
 
-# Optional but useful for notebook (not strictly required)
-jupyter>=1.0.0          # if you run it locally in Jupyter
-ipython>=8.0.0          # interactive shell
+# Notebook environment
+jupyter>=1.0.0
+ipython>=8.0.0
