@@ -22,6 +22,11 @@ Persistently low 3D fractal dimensions (1.25 ≤ D₃D ≤ 1.82) are measured ac
 
 The results motivate an alternative where spacetime curvature emerges solely from baryonic matter perturbations, rendering dark matter and dark energy unnecessary.
 
+### Key Scientific Breakthroughs (Validated in this Repo)
+- **Large-Scale Anisotropy Detected:** Measurement of North-South fractal asymmetry ($D_{NGC} \approx 1.88$ vs. $D_{SGC} \approx 1.77$) using **DESI Year-1** LRG samples.
+- **Hubble Tension Resolution:** Geometric derivation showing $H_0 \approx 73$ km/s/Mpc is a scaling artifact of $D \approx 2.25$ fractal geometry, resolving the conflict with the global $67.4$ value.
+- **16 Orders of Magnitude:** Persistent fractal dimensions ($1.25 \le D \le 1.82$) from **PHANGS** clouds ($10^{-6}$ pc) to **JWST JADES/UNCOVER** filaments ($10^4$ Mpc).
+
 ### What's Included
 
 - Main Jupyter notebook: [`supplementary_calculations.ipynb`](supplementary_calculations.ipynb)  
@@ -33,10 +38,12 @@ The results motivate an alternative where spacetime curvature emerges solely fro
 - Dependencies: [`requirements.txt`](requirements.txt)
 
 **Representative subsamples** (due to non-public filtered full lists):
-- M31 MW-facing sector satellites
-- Cosmic Vine members (Jin+2024 core subsample)
-- z > 10 confirmed galaxies
-- z > 5 filament candidates
+- m31_mw_facing_sector.csv
+- cosmic_vine_members.csv
+- UNCOVER_z10_z16.csv
+- UNCOVER_z5_z10.csv
+- LOCAL_LARGE_SCALE_SUBSET.csv
+- local_anisotropy_summary.csv
 
 Full filtered catalogs not redistributed (size, privacy, and source archive limitations) — see `data_links.md` for sources and query instructions.
 
