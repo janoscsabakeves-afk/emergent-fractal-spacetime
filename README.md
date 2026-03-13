@@ -44,6 +44,7 @@ The results motivate an alternative where spacetime curvature emerges solely fro
 - UNCOVER_z5_z10.csv
 - LOCAL_LARGE_SCALE_SUBSET.csv
 - local_anisotropy_summary.csv
+- FINAL_FRACTAL_DIMENSION_RESULTS.csv
 
 Full filtered catalogs not redistributed (size, privacy, and source archive limitations) — see `data_links.md` for sources and query instructions.
 
