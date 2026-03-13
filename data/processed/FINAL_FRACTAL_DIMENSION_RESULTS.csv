@@ -1,0 +1,7 @@
+Dataset,Redshift_z,D3D_Measured,R_squared,Galaxy_Count,Structure_Type,LCDM_Prediction
+DESI BGS,0.05-0.15,1.7558,0.9639,60101,Virialized/Clustered,~3.0 (Homogeneous)
+DESI ELG,0.8-1.5,1.7708,0.9696,2740,Fine Filamentary,~2.8 (Clustered)
+DESI LRG,0.4-1.1,1.4579,0.9622,1116,Hierarchical Backbone,~2.6 (Halo-based)
+JWST JADES (Prism),5.0-15.0,1.6379,0.941,279,Primordial Spaghetti,~2.4 (Gas Infall)
+JWST UNCOVER (High-Z),> 5.0,1.749,0.91,5558,Correlation-Web,~2.2 (First Halos)
+JWST UNCOVER (Total),0.1-15.0,1.2341,0.982,73998,Global Fractal Average,~3.0 (Global)
