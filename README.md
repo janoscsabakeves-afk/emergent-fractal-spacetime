@@ -1,68 +1,66 @@
-# Emergent Fractal Spacetime  
-**A Dark-Component-Free Cosmological Model Based on Emergent Fractal Geometry**
+# Emergent Fractal Spacetime Analysis Pipeline
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<!--Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)-->
-
-János Csaba Kevés  
-Independent Researcher  
+**Reproducible 3D Fractal Dimension Measurements**  
+János Csaba Kevés – Independent Researcher  
 Budapest, Hungary  
 janoscsabakeves@gmail.com  
-January 2026
+January–April 2026
 
-[📄 Full paper (PDF)](./emergent-fractal-spacetime.pdf)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
+
+[📄 Full Paper (PDF)](./emergent-fractal-spacetime.pdf)
 
 ### Overview
 
-This repository contains the supplementary code and processed datasets to reproduce the key results of the paper:
+This repository provides the code and processed data needed to reproduce the core empirical results of the preprint:
 
-**Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web: A Dark-Component-Free Cosmological Model**
+**"Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web:  
+A Dark-Component-Free Cosmological Model"** (Kevés, 2026)
 
-Persistently low 3D fractal dimensions (1.25 ≤ D₃D ≤ 1.82) are measured across 16 orders of magnitude in scale using uniform box-counting on public JWST/HST/Gaia/DESI-derived point clouds — in strong tension with ΛCDM predictions for virialized structures.
+The analysis applies uniform 3D box-counting and correlation dimension methods to publicly available datasets (JWST PHANGS, JADES, CEERS, UNCOVER, GLASS, PRIMER, HST, Gaia DR3, DESI Year-1).  
+It measures fractal dimensions in the range **1.25 ≤ D₃D ≤ 2.25** in strongly perturbed baryonic structures across \~16 orders of magnitude in physical scale.
 
-The results motivate an alternative where spacetime curvature emerges solely from baryonic matter perturbations, rendering dark matter and dark energy unnecessary.
+The results are compared to ΛCDM hydrodynamical simulations (IllustrisTNG, MillenniumTNG, Thesan, FLARES etc.).  
+The repository aims for **maximum practical reproducibility** while respecting data size and licensing constraints.
 
-### Key Scientific Breakthroughs (Validated in this Repo)
-- **Large-Scale Anisotropy Detected:** Measurement of North-South fractal asymmetry ($D_{NGC} \approx 1.88$ vs. $D_{SGC} \approx 1.77$) using **DESI Year-1** LRG samples.
-- **Hubble Tension Resolution:** Geometric derivation showing $H_0 \approx 73$ km/s/Mpc is a scaling artifact of $D \approx 2.25$ fractal geometry, resolving the conflict with the global $67.4$ value.
-- **16 Orders of Magnitude:** Persistent fractal dimensions ($1.25 \le D \le 1.82$) from **PHANGS** clouds ($10^{-6}$ pc) to **JWST JADES/UNCOVER** filaments ($10^4$ Mpc).
+### Repository Contents
 
-### What's Included
+- **`supplementary_calculations.ipynb`** – Main Jupyter notebook containing:
+  - Data loading (with fallback to hardcoded representative samples)
+  - 3D box-counting implementation
+  - Automatic scaling regime selection (R² ≥ 0.95, ≥ 1 decade)
+  - Bootstrap confidence intervals
+  - Deprojection correction for photometric/high-z data
+  - PCA-based filament analysis
+  - Exploratory Hubble scaling toy model
+  - Summary tables and plots
 
-- Main Jupyter notebook: [`supplementary_calculations.ipynb`](supplementary_calculations.ipynb)  
-  → box-counting, deprojection correction, bootstrap errors, scaling regime detection, plots
-- Processed point clouds (Cartesian subsamples): [`data/processed/`](data/processed/)  
-  → small CSV files for fast reproduction  
-  → fallback to hardcoded representative arrays if files missing (Colab/offline friendly)
-- Catalog links & filtering notes: [`data_links.md`](data_links.md)
-- Dependencies: [`requirements.txt`](requirements.txt)
+- **`data/processed/`** – Representative Cartesian point clouds (small CSV files for fast execution):
+  - `m31_mw_facing_sector.csv`
+  - `cosmic_vine_members.csv`
+  - `UNCOVER_z5_z10.csv` (subsample)
+  - `UNCOVER_z10_z16.csv` (subsample)
+  - Additional local/DESI subsets
 
-**Representative subsamples** (due to non-public filtered full lists):
-- m31_mw_facing_sector.csv
-- cosmic_vine_members.csv
-- UNCOVER_z10_z16.csv
-- UNCOVER_z5_z10.csv
-- LOCAL_LARGE_SCALE_SUBSET.csv
-- local_anisotropy_summary.csv
-- FINAL_FRACTAL_DIMENSION_RESULTS.csv
+- **`data_links.md`** – Detailed instructions and links to download full public catalogs + quality cuts applied.
 
-Full filtered catalogs not redistributed (size, privacy, and source archive limitations) — see `data_links.md` for sources and query instructions.
+- **`requirements.txt`** – Exact Python dependencies.
+
+**Important note on data**:  
+Full filtered catalogs are **not redistributed** in this repository due to size and origin from public archives (MAST, DESI, etc.). The notebook uses **representative subsamples** (typically N ≈ 20–50 for high-z systems) that preserve the main observed trends. For full statistical power, users are encouraged to download the complete datasets using the instructions in `data_links.md`.
 
 ### Quick Start
 
 ```bash
-# Clone
 git clone https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime.git
 cd emergent-fractal-spacetime
 
-# Virtual environment (recommended)
+# Recommended: virtual environment
 python -m venv venv
-source venv/bin/activate          # Linux/macOS
+source venv/bin/activate          # Linux / macOS
 # venv\Scripts\activate           # Windows
 
-# Install
 pip install -r requirements.txt
 
-# Run
 jupyter notebook supplementary_calculations.ipynb
-# or upload to Google Colab
