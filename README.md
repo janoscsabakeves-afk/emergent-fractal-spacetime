@@ -96,3 +96,28 @@ source venv/bin/activate          # Linux / macOS
 pip install -r requirements.txt
 
 jupyter notebook supplementary_calculations.ipynb
+
+
+**The notebook is also Colab-friendly** (fallback hardcoded data works offline).
+
+### Reproducibility Status
+
+Core algorithms and benchmark values can be reproduced in 1–5 minutes with the included subsamples.  
+Full reproduction of all figures and tables requires the complete catalogs (see above).  
+Validation on synthetic fractal sets and comparison with ΛCDM mocks is planned for a future update.
+
+We welcome contributions, bug reports, and independent verifications.
+
+### Citation
+
+```bibtex
+@misc{keves2026emergent,
+  author       = {Kevés, János Csaba},
+  title        = {Emergent Fractal Geometry of Spacetime from Interstellar Clouds to the Cosmic Web: A Dark-Component-Free Cosmological Model},
+  year         = {2026},
+  howpublished = {arXiv / Zenodo (pending)},
+  url          = {https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime}
+}
+
+Zenodo DOI will be added upon archival.ContactEmail: janoscsabakeves@gmail.com  
+GitHub Issues: Feel free to open an issue.
