@@ -96,7 +96,7 @@ source venv/bin/activate          # Linux / macOS
 pip install -r requirements.txt
 
 jupyter notebook supplementary_calculations.ipynb
-
+````
 
 **The notebook is also Colab-friendly** (fallback hardcoded data works offline).
 
@@ -118,6 +118,6 @@ We welcome contributions, bug reports, and independent verifications.
   howpublished = {arXiv / Zenodo (pending)},
   url          = {https://github.com/janoscsabakeves-afk/emergent-fractal-spacetime}
 }
-
+````
 Zenodo DOI will be added upon archival.ContactEmail: janoscsabakeves@gmail.com  
 GitHub Issues: Feel free to open an issue.
